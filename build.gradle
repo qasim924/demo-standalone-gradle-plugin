@@ -1,0 +1,40 @@
+plugins {
+    id 'maven-publish'
+    id 'groovy'
+    id 'java-gradle-plugin'
+}
+
+repositories {
+    mavenCentral()
+}
+group 'com.codeinvestigator'
+version '1.0-SNAPSHOT'
+
+publishing {
+    repositories {
+        maven {
+            url = layout.buildDirectory.dir('repo')
+        }
+    }
+}
+
+dependencies {
+    testImplementation platform("org.spockframework:spock-bom:2.1-groovy-3.0")
+    testImplementation "org.spockframework:spock-core"
+
+    implementation gradleApi()
+    implementation localGroovy()
+}
+
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+}
+
+gradlePlugin {
+    plugins {
+        simplePlugin {
+            id = 'com.codeinvestigator.weatherforecast'
+            implementationClass = 'com.codeinvestigator.plugin.GitPullPlugin'
+        }
+    }
+}
