@@ -21,7 +21,7 @@ class GitPullPluginTest extends Specification{
     def "can pull in from git"() {
         buildFile << """
             remoteGit {
-                url = 'https://www.mycustomurl.com'
+                message = 'and this message was read properly'
             }
         """
         when:
@@ -32,7 +32,7 @@ class GitPullPluginTest extends Specification{
                 .build()
 
         then:
-        result.output.contains("url is https://www.mycustomurl.com")
+        result.output.contains("SUCCESS! The plugin got included and this message was read properly.")
         result.task(":pull").outcome == TaskOutcome.SUCCESS
     }
 }

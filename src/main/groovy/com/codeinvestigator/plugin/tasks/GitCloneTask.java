@@ -7,10 +7,10 @@ import org.gradle.api.tasks.TaskAction;
 
 abstract public class GitCloneTask extends DefaultTask {
     @Input
-    abstract public Property<String> getUrl();
+    abstract public Property<String> getMessage();
 
     @TaskAction
     public void pullFromRemote() {
-        System.out.println("url is " + getUrl().get());
+        System.out.println("SUCCESS! The plugin got included " + getMessage().get() + ".");
     }
 }

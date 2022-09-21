@@ -10,6 +10,6 @@ public class GitPullPlugin implements Plugin<Project> {
     public void apply(Project project) {
         RemoteUrlExtension extension = project.getExtensions().create("remoteGit", RemoteUrlExtension.class);
         GitCloneTask gitCloneTask = project.getTasks().create("pull", GitCloneTask.class);
-        gitCloneTask.getUrl().set(extension.getUrl());
+        gitCloneTask.getMessage().set(extension.getMessage());
     }
 }
