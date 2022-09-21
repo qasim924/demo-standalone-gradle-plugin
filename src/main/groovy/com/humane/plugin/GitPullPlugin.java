@@ -1,7 +1,7 @@
-package com.codeinvestigator.plugin;
+package com.humane.plugin;
 
-import com.codeinvestigator.plugin.extensions.RemoteUrlExtension;
-import com.codeinvestigator.plugin.tasks.GitCloneTask;
+import com.humane.plugin.extensions.RemoteUrlExtension;
+import com.humane.plugin.tasks.GitCloneTask;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 

@@ -1,4 +1,4 @@
-package com.codeinvestigator.plugin
+package com.humane.plugin
 
 import org.gradle.testkit.runner.GradleRunner
 import org.gradle.testkit.runner.TaskOutcome
@@ -13,7 +13,7 @@ class GitPullPluginTest extends Specification{
         buildFile = new File(testProjectDir, "build.gradle")
         buildFile << """
             plugins {
-                id 'com.codeinvestigator.weatherforecast'
+                id 'com.humane.sdksync'
             }
         """
     }
