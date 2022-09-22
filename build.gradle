@@ -2,6 +2,7 @@ plugins {
     id 'maven-publish'
     id 'groovy'
     id 'java-gradle-plugin'
+    id "com.github.unafraid.gradle.git-repo-plugin" version "2.0.4.1"
 }
 
 repositories {
@@ -37,4 +38,11 @@ gradlePlugin {
             implementationClass = 'com.humane.plugin.GitPullPlugin'
         }
     }
+}
+
+gitPublishConfig{
+    org = "qasim924"
+    repo = "demo-standalone-gradle-plugin"
+    upstream = "origin"
+    branch = "main"
 }
